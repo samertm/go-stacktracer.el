@@ -25,7 +25,8 @@
   "Parses a go stacktrace in a region"
   (interactive "r")
   (let ((trace (split-string (buffer-substring start end) "\n" t))
-        (buf (go-stacktracer--get-buffer)))
+        (buf (go-stacktracer--get-buffer))
+        (last-line ""))
     (with-current-buffer buf
       (insert "go-stacktracer results:\n\n"))
     (while trace
@@ -34,7 +35,8 @@
             (let ((file-path (substring line (match-beginning 1) (match-end 1)))
                   (line-num  (substring line (match-beginning 2) (match-end 2))))
               (with-current-buffer buf
-                (insert file-path ":" line-num ": \n")))))
+                (insert file-path ":" line-num ": " last-line "\n"))))
+        (setq last-line line))
       (setq trace (cdr trace)))
     (with-current-buffer buf
       (grep-mode))
