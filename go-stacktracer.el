@@ -34,8 +34,10 @@
             (let ((file-path (substring line (match-beginning 1) (match-end 1)))
                   (line-num  (substring line (match-beginning 2) (match-end 2))))
               (with-current-buffer buf
-                (insert "    " file-path " on line " line-num "\n")))))
+                (insert file-path ":" line-num ": \n")))))
       (setq trace (cdr trace)))
+    (with-current-buffer buf
+      (grep-mode))
     (display-buffer buf)))
 
 
