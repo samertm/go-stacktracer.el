@@ -34,6 +34,9 @@
         (if (not (eq (string-match go-stacktracer-re line) nil))
             (let ((file-path (substring line (match-beginning 1) (match-end 1)))
                   (line-num  (substring line (match-beginning 2) (match-end 2))))
+              ;; strip default-directory from file-path.
+              (if (not (eq (string-match (concat "^" default-directory) file-path) nil))
+                  (setq file-path (substring file-path (match-end 0) (length file-path))))
               (with-current-buffer buf
                 (insert file-path ":" line-num ": " last-line "\n"))))
         (setq last-line line))
