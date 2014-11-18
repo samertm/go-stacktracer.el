@@ -8,6 +8,8 @@
 
 ;;; Commentary:
 
+;; Jump through Go stacktraces easily.
+
 ;;; Code:
 
 (defun go-stacktracer--get-buffer ()
@@ -21,8 +23,8 @@
 (defconst go-stacktracer-re "^\\s-*\\([^ ]*\\.go\\):\\([[:digit:]]+\\)")
 
 ;;;###autoload
-(defun go-stacktracer-parse-region (start end)
-  "Parses a go stacktrace in a region"
+(defun go-stacktracer-region (start end)
+  "Parse a Go stacktrace from START to END."
   (interactive "r")
   (let ((trace (split-string (buffer-substring start end) "\n" t))
         (buf (go-stacktracer--get-buffer))
@@ -44,5 +46,8 @@
     (with-current-buffer buf
       (grep-mode))
     (display-buffer buf)))
+
+(provide 'go-stacktracer)
+;;; go-stacktracer.el ends here
 
 
