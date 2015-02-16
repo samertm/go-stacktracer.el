@@ -57,7 +57,8 @@
         (setq last-line line))
       (setq trace (cdr trace)))
     (with-current-buffer buf
-      (grep-mode))
+      (grep-mode)
+      (goto-char (point-min)))
     (display-buffer buf)))
 
 (provide 'go-stacktracer)
