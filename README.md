@@ -1,3 +1,5 @@
+[![License GPL 3][badge-license]][LICENSE]
+
 go-stacktracer.el
 =================
 
