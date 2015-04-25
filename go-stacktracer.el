@@ -84,5 +84,3 @@
 
 (provide 'go-stacktracer)
 ;;; go-stacktracer.el ends here
-
-
