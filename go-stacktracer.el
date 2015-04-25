@@ -2,9 +2,9 @@
 
 ;; Copyright (C) 2014 Samer Masterson
 
-;; Author: Samer T. Masterson <samer@samertm.com>
+;; Author: Samer Masterson <samer@samertm.com>
 ;; Keywords: tools
-;; URL: https://github.com/samertm/go-stacktracer
+;; URL: https://github.com/samertm/go-stacktracer.el
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -21,7 +21,28 @@
 
 ;;; Commentary:
 
-;; Jump through Go stacktraces easily.
+;; Jump through Go stacktraces as easily as grep-mode.
+
+;; When you hit a stacktrace, mark the portion that you want to jump
+;; through and then call `go-stacktracer-region' with M-x. The
+;; *go-stacktracer* buffer will look something like this:
+
+;; main.go:20: main.AFunc()
+;; main.go:15: main.AnotherFunc()
+;; main.go:7: main.main()
+
+;; Use "n" and "p" to go down and up (just like grep-mode, it's
+;; *go-stacktracer* is literally a grep-mode buffer).
+
+;; go-stacktracer uses a regexp to capture the file path and line
+;; number, so you don't need to be super precise with the lines you
+;; call `go-stacktracer-region' on (though you should be sure to
+;; capture the entire line).
+
+;; BUGS: "debug.PrintStack()" prints the function name and file path
+;; in the opposite order that "panic" does. I don't handle that case
+;; right now, so the function names are off-by-one in the view for
+;; debug.PrintStack traces.
 
 ;;; Code:
 
