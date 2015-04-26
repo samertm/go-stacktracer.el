@@ -17,7 +17,7 @@ smart, just be sure to capture the entire line).
 
 3. <kbd>M-x</kbd> `go-stacktracer-region`
 
-4. Use <kbd>n</kbd> and <kbd>p</kdb> to move up and down,
+4. Use <kbd>n</kbd> and <kbd>p</kbd> to move up and down,
 <kbd>RET</kbd> to jump to a file (just like grep-mode).
 
 5. Find bugs and submit patches! I happily accept all issues/pull

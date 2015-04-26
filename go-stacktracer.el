@@ -33,7 +33,7 @@
 
 ;; 3. M-x `go-stacktracer-region`
 
-;; 4. Use n" and p to move up and down, RET to jump to a file (just
+;; 4. Use n and p to move up and down, RET to jump to a file (just
 ;; like grep-mode).
 
 ;; 5. Find bugs and submit patches! I happily accept all issues/pull
