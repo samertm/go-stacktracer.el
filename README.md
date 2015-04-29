@@ -1,4 +1,5 @@
 [![License GPL 3][badge-license]][license]
+[![MELPA][badge-melpa]][melpa]
 
 # go-stacktracer.el
 
@@ -53,3 +54,5 @@ debug.PrintStack traces.
 
 [badge-license]: https://img.shields.io/badge/license-GPL_3-green.svg
 [license]: https://github.com/samertm/go-stacktracer.el/blob/master/LICENSE
+[badge-melpa]: http://melpa.org/packages/go-stacktracer-badge.svg
+[melpa]: http://melpa.org/#/go-stacktracer
