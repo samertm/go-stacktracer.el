@@ -25,15 +25,15 @@
 
 ;; Usage:
 
-;; 1. Hit a panic (`debug.PrintStack()` doesn't work perfectly, see
+;; 1. Hit a panic (`debug.PrintStack()' doesn't work perfectly, see
 ;; "BUGS" below)
 
 ;; 2. Highlight/mark region (you can be sloppy because go-stacktracer is
 ;; smart, just be sure to capture the entire line).
 
-;; 3. M-x `go-stacktracer-region`
+;; 3. M-x `go-stacktracer-region'
 
-;; 4. Use n and p to move up and down, RET to jump to a file (just
+;; 4. Use `n' and `p' to move up and down, RET to jump to a file (just
 ;; like grep-mode).
 
 ;; 5. Find bugs and submit patches! I happily accept all issues/pull
@@ -59,10 +59,10 @@
 
 ;; BUGS:
 
-;; "debug.PrintStack()" prints the function name and file path in the
-;; opposite order that "panic" does. I don't handle that case right
+;; `debug.PrintStack()' prints the function name and file path in the
+;; opposite order that `panic' does. I don't handle that case right
 ;; now, so the function names are off-by-one in the view for
-;; debug.PrintStack traces.
+;; `debug.PrintStack()' traces.
 
 ;;; Code:
 
