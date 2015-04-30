@@ -49,7 +49,7 @@
 ;; main.go:15: main.AnotherFunc()
 ;; main.go:7: main.main()
 
-;; Use "n" and "p" to go down and up (just like grep-mode, it's
+;; Use "n" and "p" to go down and up (just like grep-mode,
 ;; *go-stacktracer* is literally a grep-mode buffer).
 
 ;; go-stacktracer uses a regexp to capture the file path and line
